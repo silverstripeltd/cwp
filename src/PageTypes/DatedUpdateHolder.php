@@ -152,7 +152,7 @@ class DatedUpdateHolder extends Page
             // Try running query inside try/catch block to handle any invalid date format
             $items->dataQuery()->execute();
         } catch (DatabaseException $e) {
-            self::handleInvalidDateFormat($e);
+            DatedUpdateHolder::handleInvalidDateFormat($e);
             // Ensure invalid SQL does not get run again
             $items = $className::get()->limit(null);
         }
@@ -213,7 +213,7 @@ class DatedUpdateHolder extends Page
                 ])
                 ->execute();
         } catch (DatabaseException $e) {
-            self::handleInvalidDateFormat($e);
+            DatedUpdateHolder::handleInvalidDateFormat($e);
         }
 
         $years = [];

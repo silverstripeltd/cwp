@@ -180,7 +180,7 @@ class DatedUpdateHolderController extends PageController
             }
         } catch (InvalidArgumentException $e) {
             if ($produceErrorMessages) {
-                $this->getRequest()->getSession()->set(self::TEMP_FORM_MESSAGE, _t(
+                $this->getRequest()->getSession()->set(DatedUpdateHolderController::TEMP_FORM_MESSAGE, _t(
                     __CLASS__ . '.InvalidDateFormat',
                     'Dates must be in "y-MM-dd" format.'
                 ));
@@ -203,7 +203,7 @@ class DatedUpdateHolderController extends PageController
             list($to, $from) = [$from, $to];
 
             if ($produceErrorMessages) {
-                $this->getRequest()->getSession()->set(self::TEMP_FORM_MESSAGE, _t(
+                $this->getRequest()->getSession()->set(DatedUpdateHolderController::TEMP_FORM_MESSAGE, _t(
                     __CLASS__ . '.FilterAppliedMessage',
                     'Filter has been applied with the dates reversed.'
                 ));
@@ -213,7 +213,7 @@ class DatedUpdateHolderController extends PageController
         // Notify the user that filtering by single date is taking place.
         if (isset($from) && !isset($to)) {
             if ($produceErrorMessages) {
-                $this->getRequest()->getSession()->set(self::TEMP_FORM_MESSAGE, _t(
+                $this->getRequest()->getSession()->set(DatedUpdateHolderController::TEMP_FORM_MESSAGE, _t(
                     __CLASS__ . '.DateRangeFilterMessage',
                     'Filtered by a single date.'
                 ));
@@ -350,9 +350,9 @@ class DatedUpdateHolderController extends PageController
         $form->setFormMethod('get');
 
         // Add any locally stored form messages before returning
-        if ($formMessage = $this->getRequest()->getSession()->get(self::TEMP_FORM_MESSAGE)) {
+        if ($formMessage = $this->getRequest()->getSession()->get(DatedUpdateHolderController::TEMP_FORM_MESSAGE)) {
             $form->setMessage($formMessage, ValidationResult::TYPE_WARNING);
-            $this->getRequest()->getSession()->clear(self::TEMP_FORM_MESSAGE);
+            $this->getRequest()->getSession()->clear(DatedUpdateHolderController::TEMP_FORM_MESSAGE);
         }
 
         return $form;
