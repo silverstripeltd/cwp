@@ -2,17 +2,17 @@
 
 namespace CWP\CWP\Extensions;
 
+use SilverStripe\Core\Extension;
 use SilverStripe\Core\Config\Config;
-use SilverStripe\ORM\DataExtension;
 use SilverStripe\ORM\DB;
 use Symbiote\AdvancedWorkflow\DataObjects\WorkflowDefinition;
 
 /**
  * Ensures that the default template is created
  *
- * @extends DataExtension<WorkflowDefinition>
+ * @extends Extension<WorkflowDefinition>
  */
-class CwpWorkflowDefinitionExtension extends DataExtension
+class CwpWorkflowDefinitionExtension extends Extension
 {
     /**
      * Create the default 'Two-step Workflow' when this extension is loaded
