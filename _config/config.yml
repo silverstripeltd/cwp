@@ -10,10 +10,6 @@ SilverStripe\CMS\Model\SiteTree:
   extensions:
     - CWP\CWP\Extensions\CwpSiteTreeExtension
 
-SilverStripe\Taxonomy\TaxonomyTerm:
-  extensions:
-   - CWP\CWP\Extensions\TaxonomyTermExtension
-
 SilverStripe\Security\Member:
   title_format:
     columns:
