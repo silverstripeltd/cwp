@@ -53,7 +53,7 @@ class CwpSiteTreeFileExtension extends Extension
                 . Convert::raw2xml($backLink->MenuTitle) . '</a> &ndash; ';
 
             // Add the CMS link
-            $listItem .= '<a href="' . $backLink->CMSEditLink() . '">'
+            $listItem .= '<a href="' . $backLink->getCMSEditLink() . '">'
                 . _t(__CLASS__ . '.EDIT', 'Edit') . '</a>';
 
             $html .= $listItem . '</li>';
