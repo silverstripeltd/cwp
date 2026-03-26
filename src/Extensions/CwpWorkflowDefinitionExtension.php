@@ -22,7 +22,7 @@ class CwpWorkflowDefinitionExtension extends Extension
      */
     private static $create_default_workflow = true;
 
-    public function requireDefaultRecords()
+    public function onRequireDefaultRecords()
     {
         if (Config::inst()->get(CwpWorkflowDefinitionExtension::class, 'create_default_workflow')) {
             // Only proceed if a definition using this template has not been created yet
