@@ -32,8 +32,6 @@ class BaseHomePage extends Page
 {
     private static $cms_icon_class = 'font-icon-p-home';
 
-    private static $hide_pagetypes = [BaseHomePage::class];
-
     private static $singular_name = 'Home Page';
 
     private static $plural_name = 'Home Pages';

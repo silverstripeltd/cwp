@@ -34,13 +34,6 @@ use SilverStripe\Forms\FormField;
 
 class BasePage extends SiteTree
 {
-    /**
-     * Hide this page type from the CMS. hide_ancestor is slightly misnamed, should really be just "hide"
-     *
-     * {@inheritDoc}
-     */
-    private static $hide_pagetypes = [BasePage::class];
-
     private static $api_access = [
         'view' => [
             'Locale', 'URLSegment', 'Title', 'MenuTitle', 'Content', 'MetaDescription',

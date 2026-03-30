@@ -19,13 +19,6 @@ use SilverStripe\Taxonomy\TaxonomyTerm;
 
 class DatedUpdateHolder extends Page
 {
-    /**
-     * Meant as an abstract base class.
-     *
-     * {@inheritDoc}
-     */
-    private static $hide_pagetypes = [DatedUpdateHolder::class];
-
     private static $update_name = 'Updates';
 
     private static $update_class = DatedUpdatePage::class;
