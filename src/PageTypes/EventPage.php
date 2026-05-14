@@ -65,7 +65,11 @@ class EventPage extends DatedUpdatePage
     public function getCMSFields()
     {
         $this->beforeUpdateCMSFields(function (FieldList $fields) {
-            $fields->removeByName('Date');
+            // SS6 auto-scaffolds the Date / StartTime / EndTime $db fields into
+            // getCMSFields(). We compose them into a custom 'Date and time' FieldGroup
+            // below, so remove the scaffolded duplicates first to avoid the
+            // 'field appears twice' runtime error.
+            $fields->removeByName(['Date', 'StartTime', 'EndTime']);
 
             $dateTimeFields = array();
 
