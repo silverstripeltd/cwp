@@ -1,0 +1,5 @@
+CWP\CWP\PageTypes\BaseHomePage:
+  home:
+    Title: Home
+    FeatureOneTitle: Feature one
+    FeatureTwoTitle: Feature two

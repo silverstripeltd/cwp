@@ -67,6 +67,20 @@ class BaseHomePage extends Page
     public function getCMSFields()
     {
         $this->beforeUpdateCMSFields(function (FieldList $fields) {
+            // The scaffolded feature fields are re-added inside the feature toggles below
+            $fields->removeByName([
+                'FeatureOneTitle',
+                'FeatureOneCategory',
+                'FeatureOneContent',
+                'FeatureOneButtonText',
+                'FeatureOneLinkID',
+                'FeatureTwoTitle',
+                'FeatureTwoCategory',
+                'FeatureTwoContent',
+                'FeatureTwoButtonText',
+                'FeatureTwoLinkID',
+            ]);
+
             // Main Content tab
             $fields->addFieldToTab(
                 'Root.Main',
